@@ -27,7 +27,7 @@ async function register(userInfo) {
 
   // Checking if the user already exists in the database
   const dynamoUser = await getUser(useremail);
-  if (dynamoUser && dynamoUser.useremail) {
+  if (dynamoUser && dynamoUser.email) {
     return util.buildResponse(401, {
       message: 'The email already exists.'
     })
